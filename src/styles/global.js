@@ -10,7 +10,22 @@ export default createGlobalStyle`
   body {
     width: 100%;
     height: 100vh;
+    font-family: 'Roboto Slab', serif;
 
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUD};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  }
+
+  body, input, button, textarea  {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    outline: none;
+  } 
+
+  a, input {
+    text-decoration: none;
+  }
+
+  a, button {
+    cursor: pointer;
   }
 `
