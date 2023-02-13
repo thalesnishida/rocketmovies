@@ -17,7 +17,7 @@ export function Header(){
 
       <Profile>
         <div>
-          <h2>Thales Nishida</h2>
+          <span>Thales Nishida</span>
           
           <ButtonText title="Sair" />
         </div>

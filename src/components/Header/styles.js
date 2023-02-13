@@ -9,6 +9,10 @@ export const Container = styled.header`
   justify-content: space-between;
   gap: 64px;
 
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: ${({ theme }) => theme.COLORS.GRAY_100};
+
   padding: 0 123px;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
@@ -23,19 +27,22 @@ export const Container = styled.header`
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-
-  width: 200px;
-
+  min-width: 167px;
+  
   > div {
     display: flex;
     flex-direction: column;
 
-    text-align: center;
-
-    h2 {
-      color: ${({ theme }) => theme.COLORS.GRAY_300};
+    span {
       font-size: 14px;
       font-weight: 700;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+
+    button {
+      font-size: 14px;
+      font-weight: 400;
+      align-self: flex-end;
     }
   }
 
