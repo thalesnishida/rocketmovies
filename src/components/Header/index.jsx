@@ -13,15 +13,15 @@ export function Header(){
         placeholder="Pesquisar pelo titulo"
         type="text"
         icon={FiSearch}
-      />
+        />
 
       <Profile>
         <div>
           <span>Thales Nishida</span>
-          
+            
           <ButtonText title="Sair" />
         </div>
-
+  
         <img 
           src="https://github.com/thalesnishida.png" 
           alt="Imagem do usúario" 
