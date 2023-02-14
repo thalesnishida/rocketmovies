@@ -6,8 +6,8 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    
-    padding: 0 123px;
+  
+    padding: 0 1rem;
 
     header {
       width: 100%;
@@ -16,11 +16,11 @@ export const Container = styled.div`
       justify-content: space-between;
     
     
-      margin-top: 50px;
-      margin-bottom: 40px;
+      margin-top: 5rem;
+      margin-bottom: 4rem;
     
       h1 {
-        font-size: 32px;
+        font-size: 3.2rem;
         font-weight: 400;
       }
     

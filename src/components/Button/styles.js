@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   width: 100%;
-  height: 48px;
+  height: 4.8rem;
 
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@ export const Container = styled.button`
   background-color: ${({ theme }) => theme.COLORS.PINK};
 
   border: none;
-  border-radius: 10px;
+  border-radius: 1rem;
   
   > svg {
   
