@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-radius: 1rem;
 
   margin-bottom: 2rem;
-
+  
   > p {
     display: -webkit-box;
     text-align: justify;
@@ -21,5 +21,14 @@ export const Container = styled.div`
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+  }
+
+  > div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 `
