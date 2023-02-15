@@ -22,7 +22,7 @@ export const Container = styled.header`
   
   > h1 {
     font-size: 3.2rem;
-    color: ${({ theme }) => theme.COLORS.PINK};
+    color: ${({ theme }) => theme.COLORS.AQUA};
   }
 
   @media(min-width: 760px){

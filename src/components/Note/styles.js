@@ -6,13 +6,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 1rem;
-  padding: 2rem;
+  gap: 0.8rem;
+  padding: 1.8rem;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
   border-radius: 1rem;
 
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   
   > p {
     display: -webkit-box;
