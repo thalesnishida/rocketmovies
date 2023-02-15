@@ -14,6 +14,6 @@ export const Container = styled.button`
   border-radius: 1rem;
   
   > svg {
-  
+    padding-right: 0.6rem;
   }
 `

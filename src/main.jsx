@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom/client';
 import GlobalStyles from './styles/global';
 import { ThemeProvider } from 'styled-components';
 
-import { Home } from './pages/Home/Home';
+import { Preview } from './pages/Preview'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Home />
+      <Preview />
     </ThemeProvider>
   </React.StrictMode>,
 )
