@@ -18,10 +18,11 @@ export function CreateMovie(){
       <main>
         <header>
           <ButtonText title="Voltar" icon={FiArrowLeft}/>
-          <h1>Novo filme</h1>
         </header>
 
         <section>
+          <h1>Novo filme</h1>
+          
           <div className='inputs'>
             <Input 
               type="text"
@@ -35,7 +36,7 @@ export function CreateMovie(){
 
           <TextArea placeholder="Observações"/>
 
-          <Section title="Marcadores" >
+          <Section className="sec2" title="Marcadores" >
             <div className="tags">
               <NewNote value="interestellar"/>
               <NewNote placeholder="Novo Marcador" isNew />
