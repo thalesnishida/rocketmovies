@@ -20,19 +20,27 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.WHITE};
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+
+    -webkit-font-smoothing: antialiased;
   }
 
+  
   body, input, button, textarea  {
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
     outline: none;
   } 
 
-  a, input {
+  a {
     text-decoration: none;
   }
 
-  a, button {
+  button, a {
     cursor: pointer;
+    transition: filter 0.2s;
+  }
+
+  button:hover, a:hover {
+    filter: brightness(0.9);
   }
 `
