@@ -7,6 +7,7 @@ import { Note } from '../../components/Note';
 import { Tag } from '../../components/Tag';
 
 import { Container } from './styles';
+import { Link } from 'react-router-dom';
 
 export function Preview(){
   return (
@@ -15,7 +16,9 @@ export function Preview(){
 
       <main>
         <header>
-          <ButtonText title="Voltar" icon={FiArrowLeft}/>
+          <Link to="/">
+            <ButtonText title="Voltar" icon={FiArrowLeft}/>
+          </Link>
         </header>
 
         <section>

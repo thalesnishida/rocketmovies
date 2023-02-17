@@ -9,6 +9,7 @@ import { TextArea } from '../../components/TextArea';
 import { ButtonText } from '../../components/ButtonText';
 
 import { Container } from './styles';
+import { Link } from 'react-router-dom';
 
 export function CreateMovie(){
   return (
@@ -17,7 +18,9 @@ export function CreateMovie(){
 
       <main>
         <header>
-          <ButtonText title="Voltar" icon={FiArrowLeft}/>
+          <Link to="/">
+            <ButtonText title="Voltar" icon={FiArrowLeft}/>
+          </Link>
         </header>
 
         <section>
