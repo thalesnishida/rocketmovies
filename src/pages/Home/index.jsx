@@ -6,6 +6,7 @@ import { Note } from '../../components/Note';
 
 
 import { Container } from './styles';
+import { Link } from 'react-router-dom';
 
 export function Home(){
   return (
@@ -16,7 +17,9 @@ export function Home(){
         <header>
           <h1>Meus filmes</h1>
 
-          <Button title="Adicionar Filme" icon={FiPlus}/>
+          <Link to="/createmovie">
+            <Button title="Adicionar Filme" icon={FiPlus}/>
+          </Link>
         </header>
 
         <section>

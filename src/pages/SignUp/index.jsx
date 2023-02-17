@@ -4,6 +4,7 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
 import { Container, Form, Background } from './styles';
+import { Link } from 'react-router-dom';
 
 export function SignUp(){
   return (
@@ -22,8 +23,10 @@ export function SignUp(){
         <Input type="password" placeholder="Senha"/>
 
         <Button title="Cadastrar"/>
-          
-        <span><FiArrowLeft />Voltar para login</span>
+
+        <Link to="/">
+          <span><FiArrowLeft />Voltar para login</span>
+        </Link>  
       </Form>
 
     </Container>

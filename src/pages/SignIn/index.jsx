@@ -2,6 +2,7 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
 import { Container, Form, Background } from './styles';
+import { Link } from 'react-router-dom';
 
 export function SignIn(){
   return (
@@ -17,8 +18,11 @@ export function SignIn(){
         <Input type="password" placeholder="Senha"/>
 
         <Button title="Entrar"/>
-          
-        <span>Criar conta</span>
+
+        <Link to="/signup">
+          <span>Criar conta</span>
+        </Link>
+        
       </Form>
 
       <Background />

@@ -3,6 +3,7 @@ import { Input } from '../Input'
 import { ButtonText } from '../ButtonText';
 
 import { Container, Profile } from './styles';
+import { Link } from 'react-router-dom';
 
 export function Header(){
   return (
@@ -17,7 +18,9 @@ export function Header(){
 
       <Profile>
         <div>
-          <span>Thales Nishida</span>
+          <Link to="/profile">
+            <span>Thales Nishida</span>
+          </Link>
             
           <ButtonText title="Sair" />
         </div>
