@@ -1,10 +1,15 @@
-import { Input } from '../../components/Input';
-import { Button } from '../../components/Button';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { Container, Form, Background } from './styles';
-import { Link } from 'react-router-dom';
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
-export function SignIn(){
+import { Container, Form, Background } from "./styles";
+
+export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <Container>
       <Form>
@@ -13,19 +18,26 @@ export function SignIn(){
 
         <h2>Crie sua Conta</h2>
 
-        <Input type="email" placeholder="E-mail"/>
+        <Input
+          type="email"
+          placeholder="E-mail"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <Input type="password" placeholder="Senha"/>
+        <Input
+          type="password"
+          placeholder="Senha"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <Button title="Entrar"/>
+        <Button title="Entrar" />
 
         <Link to="/signup">
           <span>Criar conta</span>
         </Link>
-        
       </Form>
 
       <Background />
     </Container>
-  )
+  );
 }
