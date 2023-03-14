@@ -8,24 +8,28 @@ export const Container = styled.div`
     header {
       button {
         color: ${({ theme }) => theme.COLORS.AQUA};
-      }  
+      }
     }
 
     section {
       overflow-y: auto;
       scrollbar-width: thin;
-      scrollbar-color: ${({ theme }) => theme.COLORS.AQUA };
+      scrollbar-color: ${({ theme }) => theme.COLORS.AQUA};
       max-height: 60.6rem;
       width: 100%;
       min-height: 63rem;
       padding-right: 1rem;
 
       .inputs {
-        margin-top: 2rem ;
-        
+        margin-top: 2rem;
+
         input {
-          background-color:${({ theme }) => theme.COLORS.BACKGROUND_700};
+          background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
           border-radius: 1rem;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
         }
       }
 
@@ -33,12 +37,12 @@ export const Container = styled.div`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        
+
         gap: 0.8rem;
-        
+
         margin-top: 1rem;
         padding: 1.2rem;
-        
+
         border-radius: 1rem;
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_1000};
       }
@@ -66,15 +70,15 @@ export const Container = styled.div`
     section::-webkit-scrollbar-track {
       background: transparent;
     }
-      
+
     section::-webkit-scrollbar-thumb {
-        background-color: ${({ theme }) => theme.COLORS.AQUA} ;
-        border-radius: 6px;
-        border: 3px solid  ${({ theme }) => theme.COLORS.AQUA};
+      background-color: ${({ theme }) => theme.COLORS.AQUA};
+      border-radius: 6px;
+      border: 3px solid ${({ theme }) => theme.COLORS.AQUA};
     }
   }
 
-  @media(min-width: 720px) {
+  @media (min-width: 720px) {
     > main {
       section {
         .inputs {
@@ -85,7 +89,7 @@ export const Container = styled.div`
     }
   }
 
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     > main {
       margin: 4rem 11.7rem 0;
       max-height: 82.3rem;
@@ -97,7 +101,7 @@ export const Container = styled.div`
       section {
         height: 100%;
 
-        h1{
+        h1 {
           margin-bottom: 4rem;
         }
 
@@ -120,4 +124,4 @@ export const Container = styled.div`
       }
     }
   }
-`
+`;
