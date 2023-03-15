@@ -7,10 +7,16 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth";
 
+import { api } from "../../services/api";
+
 export function Header() {
   const navigate = useNavigate();
 
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarDefaultProfile;
 
   function handleSignOut() {
     navigate("/");
@@ -26,16 +32,13 @@ export function Header() {
       <Profile>
         <div>
           <Link to="/profile">
-            <span>Thales Nishida</span>
+            <span>{user.name}</span>
           </Link>
 
           <ButtonText title="Sair" onClick={handleSignOut} />
         </div>
 
-        <img
-          src="https://github.com/thalesnishida.png"
-          alt="Imagem do usúario"
-        />
+        <img src={avatarUrl} alt="Imagem avatar do usúario" />
       </Profile>
     </Container>
   );
