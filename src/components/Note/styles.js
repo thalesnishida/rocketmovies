@@ -13,22 +13,20 @@ export const Container = styled.div`
   border-radius: 1rem;
 
   margin-bottom: 1rem;
-  
-  > p {
-    display: -webkit-box;
-    text-align: justify;
-    overflow: hidden;
+
+  > .description {
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   > div {
     display: flex;
     justify-content: start;
     align-items: center;
-    
+
     flex-wrap: wrap;
     gap: 1rem;
   }
-`
+`;

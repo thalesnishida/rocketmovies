@@ -1,29 +1,26 @@
-import { FiStar } from 'react-icons/fi'
+import { FiStar } from "react-icons/fi";
 
-import { Tag } from '../Tag';
-import { Rating } from '../Rating';
+import { Tag } from "../Tag";
+import { Rating } from "../Rating";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
-export function Note({title, description, ...rest}){
+export function Note({ title, description, ...rest }) {
   return (
-    <Container {...rest} >
-      
+    <Container {...rest}>
       <h2>{title}</h2>
 
       <div>
         <Rating />
       </div>
 
-      <p>
-        {description}
-      </p>
+      <p className="description">{description}</p>
 
       <div>
-        <Tag title="movies"/>
-        <Tag title="movies"/>
-        <Tag title="movies"/>
+        <Tag title="movies" />
+        <Tag title="movies" />
+        <Tag title="movies" />
       </div>
     </Container>
-  )
+  );
 }
