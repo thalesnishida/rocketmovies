@@ -11,18 +11,31 @@ import { TextArea } from "../../components/TextArea";
 import { ButtonText } from "../../components/ButtonText";
 
 import { Container } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export function CreateMovie() {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState("");
   const [rate, setRate] = useState(null);
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState([]);
 
   async function handleSaveNote() {
+    if (!title) {
+      return alert("Por favor difite o titulo da nota!");
+    }
+
     if (!rate) {
       return alert("Porfavor de uma nota de 0 a 5");
+    }
+
+    if (newTag) {
+      return alert(
+        "Você digitou no campo tag mas nao adicionou.Por favor adicione ou deixe o campo em branco"
+      );
     }
 
     console.log(rate);
@@ -33,6 +46,7 @@ export function CreateMovie() {
     try {
       await api.post("/notes", { title, rating: rate, description, tags });
       alert("Nota criada com sucesso!");
+      navigate(-1);
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
@@ -42,7 +56,14 @@ export function CreateMovie() {
     }
   }
 
-  function handleNewNote(event) {}
+  function addNewTag() {
+    setTags((prevState) => [...prevState, newTag]);
+    setNewTag("");
+  }
+
+  function removeTag(deleted) {
+    setTags((prevState) => prevState.filter((link) => link !== deleted));
+  }
 
   return (
     <Container>
@@ -71,8 +92,11 @@ export function CreateMovie() {
               maxLength={1}
               placeholder="Sua nota(de 0 a 5)"
               onChange={(e) => {
-                if (e.target.value.length > 1) {
+                if (e.target.value.length > 1 || e.target.value > 5) {
                   e.target.value = e.target.value.substr(0, 1);
+
+                  alert("Somente numeros de 0 a 5");
+                  return (e.target.value = "");
                 }
                 setRate(Number(e.target.value));
               }}
@@ -86,12 +110,19 @@ export function CreateMovie() {
 
           <Section className="sec2" title="Marcadores">
             <div className="tags">
-              <NewNote value="interestellar" />
+              {tags.map((tag, index) => (
+                <NewNote
+                  key={String(index)}
+                  value={tag}
+                  onClick={() => removeTag(tag)}
+                />
+              ))}
               <NewNote
                 placeholder="Novo Marcador"
                 isNew
-                onChange={(e) => setTags(e.target.value)}
-                onClick={handleNewNote}
+                value={newTag}
+                onChange={(e) => setNewTag(e.target.value)}
+                onClick={addNewTag}
               />
             </div>
 
