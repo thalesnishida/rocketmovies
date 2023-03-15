@@ -11,20 +11,24 @@ import { api } from "../../services/api";
 
 export function Home() {
   const [data, setData] = useState();
+  const [search, setSearch] = useState("");
+
+  function childToParent(search) {
+    setSearch(search);
+  }
 
   useEffect(() => {
     async function fetchNotesMovies() {
-      const response = await api.get(`/notes?title=`);
+      const response = await api.get(`/notes?title=${search}`);
       setData(response.data);
     }
 
     fetchNotesMovies();
-  }, []);
+  }, [search]);
 
-  console.log(data);
   return (
     <Container>
-      <Header />
+      <Header childToParent={childToParent} />
 
       <main>
         <header>
