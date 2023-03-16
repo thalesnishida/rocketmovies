@@ -2,102 +2,101 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   > main {
-      header {
+    width: 100%;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      padding: 2rem 2rem;
+    }
+
+    section {
+      padding: 2rem 2rem;
+      max-height: 100vh;
+      overflow-y: auto;
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      .info {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: start;
 
-        padding: 2rem 2rem;
-      }
+        text-align: center;
+        gap: 1rem;
 
-      section {
-        padding: 2rem 2rem;
-        max-height: 100vh;
-        overflow-y: auto;
+        margin-top: 1rem;
 
-        
-        h1 {
-          margin-bottom: 1rem;
-        }
-        
-        .info {
+        div {
           display: flex;
-          flex-direction: column;
-          justify-content:  start;
-          
-          text-align: center;
-          gap: 1rem;
-          
-          margin-top: 1rem;
-          
-          div {
-            display: flex;
-            align-items: center;
-            
-            img {
-              width: 1.6rem;
-              height: 1.6rem;
-  
-              border-radius: 50%;
-              border: 1px solid ${({ theme }) => theme.COLORS.WHITE};
-            }
+          align-items: center;
 
-            span {
-              margin-left: 1rem;
-            }
-            
-            svg {
-              color: ${({ theme }) => theme.COLORS.AQUA};
-            }
-            
+          img {
+            width: 1.6rem;
+            height: 1.6rem;
+
+            border-radius: 50%;
+            border: 1px solid ${({ theme }) => theme.COLORS.WHITE};
           }
-        }
 
-        > .tags {
-          margin: 3rem 0;
-        }
+          span {
+            margin-left: 1rem;
+          }
 
-        > p {
-          text-align: justify;
+          svg {
+            color: ${({ theme }) => theme.COLORS.AQUA};
+          }
         }
       }
 
+      > .tags {
+        margin: 3rem 0;
+      }
+
+      > p {
+        text-align: justify;
+        overflow-wrap: break-word;
+      }
+    }
+
+    section {
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: ${({ theme }) => theme.COLORS.AQUA};
+      width: 100%;
+      max-height: 60.6rem;
+    }
+
+    section::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    section::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    section::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.COLORS.AQUA};
+      border-radius: 6px;
+      border: 3px solid ${({ theme }) => theme.COLORS.AQUA};
+    }
+  }
+  @media (min-width: 760px) {
+    main {
       section {
-          overflow-y: auto;
-          scrollbar-width: thin;
-          scrollbar-color: ${({ theme }) => theme.COLORS.AQUA };
-          width: 100%;
-          max-height: 60.6rem;
-        }
-
-        section::-webkit-scrollbar {
-          width: 0.5rem;
-        }
-
-        section::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        section::-webkit-scrollbar-thumb {
-          background-color: ${({ theme }) => theme.COLORS.AQUA} ;
-          border-radius: 6px;
-          border: 3px solid  ${({ theme }) => theme.COLORS.AQUA};
-        }
-
-      }
-      @media(min-width: 760px) {
-        main {
-          section {
-            > .info {
-              flex-direction: row;
-            }
-          }
+        > .info {
+          flex-direction: row;
         }
       }
+    }
+  }
 
-      @media(min-width: 1024px) {
-        main {
-          padding: 0 10.3rem;
-        }
-      }
-`
+  @media (min-width: 1024px) {
+    main {
+      padding: 0 10.3rem;
+    }
+  }
+`;

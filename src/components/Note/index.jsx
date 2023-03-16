@@ -5,7 +5,7 @@ import { Rating } from "../Rating";
 
 import { Container } from "./styles";
 
-export function Note({ title, description, ...rest }) {
+export function Note({ title, description, tags, ...rest }) {
   return (
     <Container {...rest}>
       <h2>{title}</h2>
@@ -17,9 +17,9 @@ export function Note({ title, description, ...rest }) {
       <p className="description">{description}</p>
 
       <div>
-        <Tag title="movies" />
-        <Tag title="movies" />
-        <Tag title="movies" />
+        {tags.map((tag) => (
+          <Tag key={tag.id} title={tag.name} />
+        ))}
       </div>
     </Container>
   );

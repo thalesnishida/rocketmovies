@@ -5,6 +5,8 @@ import { ButtonText } from "../ButtonText";
 import { Container, Profile } from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 
+import avatarDefaultProfile from "../../assets/avatar_placeholder.svg";
+
 import { useAuth } from "../../hooks/auth";
 
 import { api } from "../../services/api";
@@ -27,11 +29,11 @@ export function Header({ childToParent }) {
   }
 
   useEffect(() => {
-    async function fetchSearch() {
+    function sendSearch() {
       childToParent(search);
     }
 
-    fetchSearch();
+    sendSearch();
   }, [search]);
 
   return (

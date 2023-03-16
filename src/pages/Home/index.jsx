@@ -5,7 +5,7 @@ import { Button } from "../../components/Button";
 import { Note } from "../../components/Note";
 
 import { Container } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
@@ -13,8 +13,14 @@ export function Home() {
   const [data, setData] = useState();
   const [search, setSearch] = useState("");
 
+  const navigate = useNavigate();
+
   function childToParent(search) {
     setSearch(search);
+  }
+
+  function handlePreview(id) {
+    navigate(`/preview/${id}`);
   }
 
   useEffect(() => {
@@ -46,6 +52,8 @@ export function Home() {
                 key={note.id}
                 title={note.title}
                 description={note.description}
+                onClick={() => handlePreview(note.id)}
+                tags={note.tags}
               />
             ))}
           </section>
