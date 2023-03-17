@@ -34,7 +34,7 @@ export function Rating({ noteId }) {
 
         return (
           <FaStar
-            key={index}
+            key={ratingValue}
             className="star"
             color={getScoreColor(data, ratingValue)}
             size={20}

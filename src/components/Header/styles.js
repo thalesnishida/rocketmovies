@@ -19,13 +19,13 @@ export const Container = styled.header`
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   grid-area: header;
-  
+
   > h1 {
     font-size: 3.2rem;
     color: ${({ theme }) => theme.COLORS.AQUA};
   }
 
-  @media(min-width: 760px){
+  @media (min-width: 760px) {
     flex-direction: row;
     height: 10.5rem;
     padding: 0 2rem;
@@ -39,7 +39,7 @@ export const Container = styled.header`
     }
   }
 
-  @media(min-width: 1024px){
+  @media (min-width: 1024px) {
     gap: 6.4rem;
     padding: 0 12.3rem;
   }
@@ -72,14 +72,15 @@ export const Profile = styled.div`
   }
 
   > img {
-    width: 5.6rem,;
-    height: 5.6rem;
+    max-width: 5.6rem;
+    max-height: 5.6rem;
 
+    object-fit: cover;
     margin-left: 10px;
     border-radius: 50%;
   }
-  
-  @media(min-width: 760px) {
+
+  @media (min-width: 760px) {
     align-self: center;
   }
-`
+`;
