@@ -38,7 +38,6 @@ export function CreateMovie() {
       );
     }
 
-    console.log(rate);
     if (rate > 5) {
       return alert("Somente de 0 a 5");
     }
@@ -65,9 +64,11 @@ export function CreateMovie() {
     setTags((prevState) => prevState.filter((link) => link !== deleted));
   }
 
+  function childToParent(search) {}
+
   return (
     <Container>
-      <Header />
+      <Header childToParent={childToParent} />
 
       <main>
         <header>

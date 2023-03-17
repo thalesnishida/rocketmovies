@@ -54,6 +54,7 @@ export function Home() {
                 description={note.description}
                 onClick={() => handlePreview(note.id)}
                 tags={note.tags}
+                noteId={note.id}
               />
             ))}
           </section>
