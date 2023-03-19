@@ -34,7 +34,7 @@ export function CreateMovie() {
 
     if (newTag) {
       return alert(
-        "Você digitou no campo tag mas nao adicionou.Por favor adicione ou deixe o campo em branco"
+        "Você digitou no campo tag mas nao adicionou. Por favor adicione ou deixe o campo em branco"
       );
     }
 
@@ -43,7 +43,12 @@ export function CreateMovie() {
     }
 
     try {
-      await api.post("/notes", { title, rating: rate, description, tags });
+      await api.post("/notes", {
+        title,
+        rating: rate,
+        description,
+        tags: tags,
+      });
       alert("Nota criada com sucesso!");
       navigate(-1);
     } catch (error) {
@@ -56,6 +61,9 @@ export function CreateMovie() {
   }
 
   function addNewTag() {
+    if (newTag == "") {
+      return;
+    }
     setTags((prevState) => [...prevState, newTag]);
     setNewTag("");
   }
@@ -66,15 +74,17 @@ export function CreateMovie() {
 
   function childToParent(search) {}
 
+  function handleBack() {
+    navigate(-1);
+  }
+
   return (
     <Container>
       <Header childToParent={childToParent} />
 
       <main>
         <header>
-          <Link to="/">
-            <ButtonText title="Voltar" icon={FiArrowLeft} />
-          </Link>
+          <ButtonText title="Voltar" icon={FiArrowLeft} onClick={handleBack} />
         </header>
 
         <section>

@@ -9,7 +9,7 @@ import { Note } from "../../components/Note";
 import { Tag } from "../../components/Tag";
 
 import { Container } from "./styles";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
@@ -20,6 +20,7 @@ export function Preview() {
 
   function childToParent(search) {}
 
+  const navigate = useNavigate();
   const { user } = useAuth();
 
   const avatarUrl = user.avatar
@@ -27,6 +28,19 @@ export function Preview() {
     : avatarDefaultProfile;
 
   const params = useParams();
+
+  async function handleRemove() {
+    const confirm = window.confirm("Deseja realmente remove a nota?");
+
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`);
+      navigate(-1);
+    }
+  }
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   useEffect(() => {
     async function fetchShow() {
@@ -43,9 +57,7 @@ export function Preview() {
 
       <main>
         <header>
-          <Link to="/">
-            <ButtonText title="Voltar" icon={FiArrowLeft} />
-          </Link>
+          <ButtonText title="Voltar" icon={FiArrowLeft} onClick={handleBack} />
         </header>
 
         <section>
@@ -72,6 +84,8 @@ export function Preview() {
           </div>
 
           <p>{data.description}</p>
+
+          <ButtonText title="Excluir nota" onClick={handleRemove} />
         </section>
       </main>
     </Container>

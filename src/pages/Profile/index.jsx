@@ -10,7 +10,7 @@ import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
 
 import { Container, Form, Avatar } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export function Profile() {
@@ -20,6 +20,8 @@ export function Profile() {
   const [email, setEmail] = useState(user.email);
   const [passwordNew, setPasswordNew] = useState("");
   const [passwordOld, setPasswordOld] = useState("");
+
+  const navigate = useNavigate();
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -50,12 +52,14 @@ export function Profile() {
     setAvatar(imagePreview);
   }
 
+  function handleBack(){
+    navigate(-1)
+  }
+
   return (
     <Container>
       <header>
-        <Link to="/">
-          <ButtonText title="Voltar" icon={FiArrowLeft} />
-        </Link>
+          <ButtonText title="Voltar" icon={FiArrowLeft} onClick={handleBack}/>
       </header>
 
       <Form>

@@ -72,8 +72,8 @@ export const Profile = styled.div`
   }
 
   > img {
-    max-width: 5.6rem;
-    max-height: 5.6rem;
+    width: 5.6rem;
+    height: 5.6rem;
 
     object-fit: cover;
     margin-left: 10px;

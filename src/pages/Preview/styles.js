@@ -59,6 +59,7 @@ export const Container = styled.div`
       > p {
         text-align: justify;
         overflow-wrap: break-word;
+        margin-bottom: 1rem;
       }
     }
 
