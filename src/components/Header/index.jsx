@@ -5,7 +5,7 @@ import { ButtonText } from "../ButtonText";
 import { Container, Profile } from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 
-import avatarDefaultProfile from "../../assets/avatar_placeholder.svg";
+import avatarPLaceholder from "../../assets/avatar_placeholder.svg";
 
 import { useAuth } from "../../hooks/auth";
 

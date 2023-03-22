@@ -1,7 +1,7 @@
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
-import avatarDefaultProfile from "../../assets/avatar_placeholder.svg";
+import avatarPLaceholder from "../../assets/avatar_placeholder.svg";
 
 import { FiArrowLeft, FiCamera, FiUser, FiMail, FiLock } from "react-icons/fi";
 
@@ -23,7 +23,7 @@ export function Profile() {
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
-    : avatarDefaultProfile;
+    : avatarPLaceholder;
 
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);

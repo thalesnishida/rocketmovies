@@ -1,6 +1,6 @@
 import { FiArrowLeft, FiClock } from "react-icons/fi";
 
-import avatarDefaultProfile from "../../assets/avatar_placeholder.svg";
+import avatarPLaceholder from "../../assets/avatar_placeholder.svg";
 
 import { ButtonText } from "../../components/ButtonText";
 import { Rating } from "../../components/Rating";
@@ -25,7 +25,7 @@ export function Preview() {
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
-    : avatarDefaultProfile;
+    : avatarPLaceholder;
 
   const params = useParams();
 
