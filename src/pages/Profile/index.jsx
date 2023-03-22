@@ -18,10 +18,8 @@ export function Profile() {
 
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
-  const [passwordNew, setPasswordNew] = useState("");
-  const [passwordOld, setPasswordOld] = useState("");
-
-  const navigate = useNavigate();
+  const [passwordNew, setPasswordNew] = useState();
+  const [passwordOld, setPasswordOld] = useState();
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -30,7 +28,9 @@ export function Profile() {
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
 
-  function handleSave() {
+  console.log(avatar);
+  const navigate = useNavigate();
+  async function handleUpdade() {
     const update = {
       name,
       email,
@@ -38,28 +38,27 @@ export function Profile() {
       old_password: passwordOld,
     };
 
-    const userUpdate = Object.assign(user, update);
+    const userUpdated = Object.assign(user, update);
 
-    updateProfile({ user: userUpdate, avatarFile });
+    await updateProfile({ user: userUpdated, avatarFile });
   }
 
   function handleChangeAvatar(event) {
     const file = event.target.files[0];
     setAvatarFile(file);
 
-    const imagePreview = URL.createObjectURL(file);
-
-    setAvatar(imagePreview);
+    const avatarPreview = URL.createObjectURL(file);
+    setAvatar(avatarPreview);
   }
 
-  function handleBack(){
-    navigate(-1)
+  function handleBack() {
+    navigate(-1);
   }
 
   return (
     <Container>
       <header>
-          <ButtonText title="Voltar" icon={FiArrowLeft} onClick={handleBack}/>
+        <ButtonText title="Voltar" icon={FiArrowLeft} onClick={handleBack} />
       </header>
 
       <Form>
@@ -103,7 +102,7 @@ export function Profile() {
           onChange={(e) => setPasswordOld(e.target.value)}
         />
 
-        <Button title="Salvar" onClick={handleSave} />
+        <Button title="Salvar" onClick={handleUpdade} />
       </Form>
     </Container>
   );

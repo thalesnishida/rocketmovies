@@ -19,9 +19,11 @@ export function Header({ childToParent }) {
 
   const { signOut, user } = useAuth();
 
+  console.log(`${api.defaults.baseURL}/files/${user.avatar}`);
+
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
-    : avatarDefaultProfile;
+    : avatarPLaceholder;
 
   function handleSignOut() {
     navigate("/");
@@ -48,14 +50,14 @@ export function Header({ childToParent }) {
 
       <Profile>
         <div>
-          <Link to="/profile">
+          <Link to={"/profile"}>
             <span>{user.name}</span>
           </Link>
 
           <ButtonText title="Sair" onClick={handleSignOut} />
         </div>
 
-        <img src={avatarUrl} alt="Imagem avatar do usúario" />
+        <img src={avatarUrl} alt={user.name} />
       </Profile>
     </Container>
   );
