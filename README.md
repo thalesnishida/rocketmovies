@@ -15,7 +15,8 @@ On this application, you can add notes about movies you have watched and rate th
 
 ## 🛠 Skills
 
-React.js, Node.js, Styled Components, 
+React.js 
+Styled Components 
 
 
 ## Installation
